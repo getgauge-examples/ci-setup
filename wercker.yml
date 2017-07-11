@@ -1,0 +1,44 @@
+box: ubuntu
+dev:
+  steps:
+      - internal/watch:
+          code: source ~/.profile
+          reload: true
+build:
+  steps:
+      - script:
+          name: apt-get
+          code: |
+            apt-get update
+      - script:
+          name: instsall curl
+          code: |
+            apt-get install curl -y
+      - script:
+          name: install wget
+          code: |
+            apt-get install wget -y
+      - script:
+          name: install unzip
+          code: |
+            apt-get install unzip -y
+      - script:
+          name: install jre
+          code: |
+            apt-get -q -y install default-jre
+      - script:
+          name: install jdk
+          code: |
+            apt-get -q -y install default-jdk
+      - script:
+          name: install gauge
+          code: |
+            sh ./install_latest_gauge.sh
+      - script:
+          name: install gauge java
+          code: |
+            gauge --install java
+      - script:
+          name: execute specs
+          code: |
+            gauge specs
