@@ -1,0 +1,15 @@
+os:
+  - osx
+
+language: java
+
+before_install:
+  - brew update
+  
+install:
+  - brew install gauge
+  - gauge --install java
+  - gauge --install html-report
+
+script:
+  - gauge specs
