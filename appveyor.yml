@@ -5,7 +5,7 @@ install:
 - ps: >-
     $gauge=$env:ProgramFiles + "\gauge\bin\gauge.exe"
 
-    &$gauge --install java
+    &$gauge --install-all
 
     sleep 30
 cache:
