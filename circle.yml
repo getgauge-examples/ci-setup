@@ -1,3 +1,10 @@
+machine:
+  timezone:
+    America/New_York
+
+  java:
+    version: oraclejdk8
+
 dependencies:
 pre:
   - sudo apt-key adv --keyserver hkp://pool.sks-keyservers.net --recv-keys 023EDB0B
@@ -5,6 +12,13 @@ pre:
   - sudo apt-get update
   - sudo apt-get install gauge
   - gauge_setup
+
+general:
+  branches:
+    only:
+      - master
+      - develop
+
 test:
   post:
     - gauge install
