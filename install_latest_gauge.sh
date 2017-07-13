@@ -11,7 +11,7 @@ fi
 
 GAUGE_DOWNLOAD_URL="https://bintray.com/gauge/Gauge/download_file?file_path=linux%2F$GAUGE_FILE_NAME"
 
-wget $GAUGE_DOWNLOAD_URL
+wget -O $GAUGE_FILE_NAME $GAUGE_DOWNLOAD_URL
 
 OUTPUT_DIR="./gauge_$GAUGE_LATEST_VERSION"
 
