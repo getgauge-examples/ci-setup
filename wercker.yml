@@ -35,13 +35,13 @@ build:
           code: |
             sh ./install_latest_gauge.sh
       - script:
-          name: switch on telemetry
-          code: |
-            gauge telemetry on
-      - script:
           name: install gauge java
           code: |
             gauge --install java
+      - script:
+          name: switch off telemetry
+          code: |
+            gauge telemetry off
       - script:
           name: execute specs
           code: |
