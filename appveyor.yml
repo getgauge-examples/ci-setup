@@ -5,7 +5,7 @@ install:
 - ps: >-
     $gauge=$env:ProgramFiles + "\gauge\bin\gauge.exe"
 
-    &$gauge --install-all
+    &$gauge install --all
 
     sleep 30
 cache:
@@ -23,7 +23,7 @@ test_script:
 - ps: >-
     $gauge=$env:ProgramFiles+"\gauge\bin\gauge.exe"
 
-    &$gauge specs
+    &$gauge run specs
 
     echo "done!"
 artifacts:
